@@ -1,4 +1,3 @@
-
 // usage: log('inside coolFunc', this, arguments);
 // paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
 window.log = function f(){ log.history = log.history || []; log.history.push(arguments); if(this.console) { var args = arguments, newarr; try { args.callee = f.caller } catch(e) {}; newarr = [].slice.call(args); if (typeof console.log === 'object') log.apply.call(console.log, console, newarr); else console.log.apply(console, newarr);}};
@@ -9,10 +8,29 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
 
-// Global site settings
-// ##########################################################
-// Makes all links with rel="external" open in a new tab
-$('a[rel="external"]').attr('target', '_blank');
+$('#chooser').change(
+    function (){
+        var bggif = $('option:selected').val();
+        $('body').css('background-image','url(img/' + bggif + ')');
+        $('#controls').modal('hide')
+    }
+).change();
 
+$('#remotefile').submit(
+    function (){
+        var bggif = $('#remotefilename').val();
+        $('#controls').modal('hide');
+        $('body').css('background-image','url(' + bggif + ')');
+        return false;
+    }
+);
 
+$('#controls').modal({
+	backdrop: true,
+	keyboard: true,
+	show: false
+});
 
+$("input[type=text]").click(function() {
+   $(this).select();
+});
