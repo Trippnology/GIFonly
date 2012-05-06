@@ -104,35 +104,7 @@
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="js/bootstrap-modal.js"></script>
-	<script src="js/bootstrap-transition.js"></script>
-	<script>
-		$('#chooser').change(
-		    function (){
-		        var bggif = $('option:selected').val();
-		        $('body').css('background-image','url(img/' + bggif + ')');
-		        $('#controls').modal('hide')
-		    }
-		).change();
-
-		$('#remotefile').submit(
-		    function (){
-		        var bggif = $('#remotefilename').val();
-		        $('#controls').modal('hide');
-		        $('body').css('background-image','url(' + bggif + ')');
-		        return false;
-		    }
-		);
-
-		$('#controls').modal({
-			backdrop: true,
-			keyboard: true,
-			show: false
-		});
-
-		$("input[type=text]").click(function() {
-		   $(this).select();
-		});
-	</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>
