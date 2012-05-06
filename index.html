@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>GIFonly</title>
+	<meta name="description" content="Fun with animated GIFs!">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Press+Start+2P">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<style>
+		body {
+			background-image: url(img/handspring.gif);
+			background-position: center center;
+			background-origin: padding-box;
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-clip: border-box;
+			background-color: #fff;
+			background-size: cover;
+			font-size:10px;
+			}
+		header { 
+			margin-top:1em;
+			-webkit-border-radius: 5px;
+			        border-radius: 5px;
+			-webkit-background-clip: padding-box;
+			   -moz-background-clip: padding;
+					background-clip: padding-box;
+			text-align: center;
+			background-color: transparent;
+			background-color: rgba(220, 220, 220, 0.1); 
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#24DCDCDC,endColorstr=#24DCDCDC);
+            zoom: 1;
+			-webkit-transition: all 0.7s ease-out; 
+			   -moz-transition: all 0.7s ease-out; 
+			    -ms-transition: all 0.7s ease-out; 
+			     -o-transition: all 0.7s ease-out; 
+			        transition: all 0.7s ease-out;
+		}
+		header:hover {
+			background-color: rgba(220, 220, 220, 0.4); 
+		}
+		h1, h2, h3, h4 { 
+			font-family: 'Press Start 2P', cursive;
+			line-height: 2em;
+			color: #444;
+		}
+		h1 { font-size: 1.6em; line-height: 2em; }
+		.right { float:right; }
+		img.right { margin:0 0 0 1em; }
+	</style>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<header class="span2">
+				<h1>GIFonly</h1>
+				<p><a class="btn btn-small launchcontrols" href="#controls" data-toggle="modal"><i class="icon-list-alt"></i> Controls</a></p>
+			</header>
+		</div>
+
+		<div class="modal fade" id="controls">
+		    <div class="modal-header">
+			    <button class="close" data-dismiss="modal">×</button>
+			    <h2>Controls</h2>
+		    </div>
+		    <div class="modal-body">
+				<img src="img/options.gif" width="140" height="104" alt="Small GIF for options panel" class="right">
+				<h3>Pick a GIF:</h3>
+				<form>		
+					<select id="chooser" class="span3">
+						<optgroup label="Small">
+							<option value="handspring.gif">Handspring</option>					
+							<option value="derp.gif">Derp</option>
+							<option value="blob.gif">Blob</option>
+							<option value="allyourbase.gif">All your base</option>
+							<option value="nyan-cat.gif">Nyan Cat</option>
+							<option value="panic.gif">Panic</option>
+						</optgroup>
+						<optgroup label="Medium">
+							<option value="pulsecube.gif">Pulse cube</option>
+							<option value="corridor.gif">Corridor</option>
+						</optgroup>
+						<optgroup label="Large">
+							<option value="jump.gif">Jump</option>
+							<option value="hats.gif">Hats</option>
+							<option value="constellations.gif">Constellations</option>
+						</optgroup>
+					</select>
+				</form>
+				<h4>URL to GIF:</h4>
+				<form id="remotefile" class="form-horizontal input-append">
+					<input type="text" id="remotefilename" name="remotefilename" class="span3" placeholder="http://example.com/img.gif">
+					<button type="submit" class="btn"><i class="icon-circle-arrow-right"></i></button>
+				</form>
+		    </div>
+		    <div class="modal-footer">
+				<p>Inspired by <a href="http://ntrnts.com/" target="_blank" class="label">ntrnts</a> and <a href="http://maxgif.com/" target="_blank" class="label">MAXGIF</a></p>
+				<p>Built by <a href="http://www.trippnology.com/" title="Web Design | SEO | IT Support" class="label">Trippnology</a> <a href="http://www.trippnology.com/web-design-attleborough.asp" title="Web Design Attleborough" class="label">Web Design Attleborough</a></p>
+		    </div>
+	    </div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/bootstrap-modal.js"></script>
+	<script src="js/bootstrap-transition.js"></script>
+	<script>
+		$('#chooser').change(
+		    function (){
+		        var bggif = $('option:selected').val();
+		        $('body').css('background-image','url(img/' + bggif + ')');
+		        $('#controls').modal('hide')
+		    }
+		).change();
+
+		$('#remotefile').submit(
+		    function (){
+		        var bggif = $('#remotefilename').val();
+		        $('#controls').modal('hide');
+		        $('body').css('background-image','url(' + bggif + ')');
+		        return false;
+		    }
+		);
+
+		$('#controls').modal({
+			backdrop: true,
+			keyboard: true,
+			show: false
+		});
+
+		$("input[type=text]").click(function() {
+		   $(this).select();
+		});
+	</script>
+</body>
+</html>
