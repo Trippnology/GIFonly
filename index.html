@@ -4,8 +4,10 @@
 	<meta charset="utf-8">
 	<title>GIFonly</title>
 	<meta name="description" content="Fun with animated GIFs!">
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Press+Start+2P">
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://cdn.trippnology.net" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+	<link rel="stylesheet" href="https://cdn.trippnology.net/css/bootstrap-2.3.2.min.css">
 	<style>
 		body {
 			background-image: url(img/handspring.gif);
@@ -18,7 +20,7 @@
 			background-size: cover;
 			font-size:10px;
 			}
-		header { 
+		header {
 			margin-top:1em;
 			-webkit-border-radius: 5px;
 			        border-radius: 5px;
@@ -27,19 +29,19 @@
 					background-clip: padding-box;
 			text-align: center;
 			background-color: transparent;
-			background-color: rgba(220, 220, 220, 0.1); 
+			background-color: rgba(220, 220, 220, 0.1);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#24DCDCDC,endColorstr=#24DCDCDC);
             zoom: 1;
-			-webkit-transition: all 0.7s ease-out; 
-			   -moz-transition: all 0.7s ease-out; 
-			    -ms-transition: all 0.7s ease-out; 
-			     -o-transition: all 0.7s ease-out; 
+			-webkit-transition: all 0.7s ease-out;
+			   -moz-transition: all 0.7s ease-out;
+			    -ms-transition: all 0.7s ease-out;
+			     -o-transition: all 0.7s ease-out;
 			        transition: all 0.7s ease-out;
 		}
 		header:hover {
-			background-color: rgba(220, 220, 220, 0.4); 
+			background-color: rgba(220, 220, 220, 0.4);
 		}
-		h1, h2, h3, h4 { 
+		h1, h2, h3, h4 {
 			font-family: 'Press Start 2P', cursive;
 			line-height: 2em;
 			color: #444;
@@ -67,10 +69,10 @@
 		    <div class="modal-body">
 				<img src="img/options.gif" width="140" height="104" alt="Small GIF for options panel" class="right">
 				<h3>Pick a GIF:</h3>
-				<form>		
+				<form>
 					<select id="chooser" class="span3">
 						<optgroup label="Small">
-							<option value="handspring.gif">Handspring</option>					
+							<option value="handspring.gif">Handspring</option>
 							<option value="derp.gif">Derp</option>
 							<option value="blob.gif">Blob</option>
 							<option value="allyourbase.gif">All your base</option>
@@ -97,13 +99,13 @@
 		    <div class="modal-footer">
 				<p><a href="https://github.com/Trippnology/GIFonly" class="label" target="_blank">GIFonly on github</a></p>
 				<p>Inspired by <a href="http://ntrnts.com/" target="_blank" class="label">ntrnts</a> and <a href="http://maxgif.com/" target="_blank" class="label">MAXGIF</a></p>
-				<p>Built by <a href="http://www.trippnology.com/" title="Web Design | SEO | IT Support" class="label">Trippnology</a> <a href="http://www.trippnology.com/web-design-attleborough.asp" title="Web Design Attleborough" class="label">Web Design Attleborough</a></p>
+				<p>Built by <a href="http://trippnology.com/" title="Web Design | SEO | IT Support" class="label">Trippnology</a> <a href="http://trippnology.com/web-design-attleborough" title="Web Design Attleborough" class="label">Web Design Attleborough</a></p>
 				<p>GIFonly is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/uk/" target="_blank" class="label" rel="license">CC BY-SA 2.0</a></p>
 		    </div>
 	    </div>
 	</div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="https://cdn.trippnology.net/js/jquery-1.11.0.min.js"></script>
 	<script>window.jQuery || document.write("<script src='js/libs/jquery-1.7.1.min.js'>\x3C/script>")</script>
 	<script src="js/script.js"></script>
 	<script src="js/plugins.js"></script>
